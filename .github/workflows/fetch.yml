@@ -6,8 +6,13 @@ on:
   schedule:
     - cron: '42 0/2 * * *' 
 
+permissions:
+  contents: read
+
 jobs:
   commit:
+    permissions:
+      contents: write  # for Git to git push
     runs-on: ubuntu-latest
 
     steps:
